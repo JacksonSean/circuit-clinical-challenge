@@ -49,9 +49,7 @@ const SearchComponent: React.FC<IProps> = (props:IProps) => {
                 trialDataList.push(data);
             }
             await createTrials(trialDataList).then(()=> props.setIsSearched(true));
-            //props.setIsSearched(true);
-           
-         
+                  
         }catch(err)
         {
             setIsError(true);
@@ -64,7 +62,7 @@ const SearchComponent: React.FC<IProps> = (props:IProps) => {
     <>
     <div id="search-form"> 
         
-        <Form noValidate onSubmit={handleSubmit} className='text-center w-100'>
+        <Form onSubmit={handleSubmit} className='text-center w-100'>
             <Form.Label className='mb-4 fs-4 fw-normal'>Find Clincal Trials in the Recruiting Phase</Form.Label>
             <InputGroup className='mb-3'>
                 <Form.Control 
@@ -79,12 +77,7 @@ const SearchComponent: React.FC<IProps> = (props:IProps) => {
                 <Button variant='custom' className='btn-custom' type="submit" size="lg" id="search-bar">Search</Button>
 
             </InputGroup>
-{/*          
-            <Form.Control.Feedback type="invalid">
-                    Please choose a username.
-                </Form.Control.Feedback>
-            <Form.Text id="error"></Form.Text>
-             */}
+            
         </Form>
     </div> 
     </>

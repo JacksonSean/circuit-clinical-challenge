@@ -11,17 +11,7 @@ interface IProps {
 
 export const ResultsComponent:React.FC<IProps> = (props:IProps) => {
     const [trialDataList, setTrialDataList] = useState<ITrialData[]>([]);
-    const [updatedTrial, setUpdatedTrial] = useState<ITrialData>();
-
-
-const updateTrial = async (id:string) => {
-    try {
-        const response = await api.put(`/trials/${id}`, updatedTrial)
-    } catch (error) {
-        console.log(error);
-    }
-  }
-  
+    
   useEffect(() => {
   
     const fetchTrials = async () => {
